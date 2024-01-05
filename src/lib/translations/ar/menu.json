@@ -1,0 +1,5 @@
+{
+	"home": "الصفحة الرئيسة ",
+	"about": "حولنا ",
+	"notification": "لديك {{count:gt; 0:{{count}} new {{count; 1:message; default:messages}}!; default:no messages...}}"
+}

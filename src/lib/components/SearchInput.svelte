@@ -26,96 +26,152 @@
 	};
 </script>
 
-<div>
-	<form autocomplete="off" on:submit|preventDefault={handleSearch}>
-		<input bind:value={searchTerm} on:input={autoCompeleteHandler} placeholder="Search..." />
-		<button type="submit">Search</button>
-	</form>
-
-	{#if suggestions.length > 0}
-		<ul>
-			{#each suggestions as suggestion}
-				<li>
-					<a href={`/search?search=${encodeURIComponent(suggestion.title)}`}>{suggestion.title}</a>
-				</li>
-			{/each}
-		</ul>
-	{/if}
+<div class="bg-transparent flex flex-col justify-center">
+	<div class=" p-12 w-full sm:max-w-2xl sm:mx-auto">
+		<div class="overflow-hidden z-0 rounded-full relative p-3">
+			<form
+				autocomplete="off"
+				on:submit|preventDefault={handleSearch}
+				role="form"
+				class="relative flex z-50 bg-white rounded-full"
+			>
+				<input
+					bind:value={searchTerm}
+					on:input={autoCompeleteHandler}
+					placeholder="Search..."
+					type="text"
+					class="rounded-full flex-1 px-6 py-4 text-gray-700 focus:outline-none"
+				/>
+				<button
+					type="submit"
+					class="bg-indigo-500 text-white rounded-full font-semibold px-8 py-4 hover:bg-indigo-400 focus:bg-indigo-600 focus:outline-none"
+					>Search</button
+				>
+			</form>
+			<div class="glow glow-1 z-10 bg-pink-400 absolute"></div>
+			<div class="glow glow-2 z-20 bg-purple-400 absolute"></div>
+			<div class="glow glow-3 z-30 bg-indigo-500 absolute"></div>
+			<div class="glow glow-4 z-40 bg-blue-400 absolute"></div>
+		</div>
+		{#if suggestions.length > 0}
+			<div class=" rounded-xl overflow-hidden">
+				<ul class="bg-white overflow-scroll h-56 p-2">
+					{#each suggestions as suggestion}
+						<li>
+							<a href={`/search?search=${encodeURIComponent(suggestion.title)}`}
+								>{suggestion.title}</a
+							>
+							<hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+						</li>
+					{/each}
+				</ul>
+			</div>
+		{/if}
+	</div>
 </div>
 
 <style>
-	div {
-		position: relative;
+	/*
+ * View a PURE 100% Tailwind CSS version here:
+ * https://play.tailwindcss.com/Vg6H4j8Fux
+ */
+
+	.glow {
+		top: -10%;
+		left: -10%;
+		width: 120%;
+		height: 120%;
+		border-radius: 100%;
 	}
 
-	form {
-		display: flex;
-		width: 100%;
-		justify-content: center;
-		gap: 16px;
-		font-size: 1.2rem;
+	.glow-1 {
+		animation: glow1 4s linear infinite;
 	}
 
-	input {
-		padding: 16px;
-		border: none;
-		border-radius: 4px;
-		background-color: #efefef; /* Dark background color */
-		color: #333; /* Text color */
-		flex: 1;
-		font-size: inherit;
+	.glow-2 {
+		animation: glow2 4s linear infinite;
+		animation-delay: 100ms;
 	}
 
-	button {
-		padding: 8px 12px;
-		border: none;
-		border-radius: 4px;
-		background-color: #555; /* Green button color */
-		color: #efefef; /* Text color */
-		cursor: pointer;
-		font-size: inherit;
-	}
-	button:hover {
-		background-color: #454545;
+	.glow-3 {
+		animation: glow3 4s linear infinite;
+		animation-delay: 200ms;
 	}
 
-	ul {
-		display: none;
+	.glow-4 {
+		animation: glow4 4s linear infinite;
+		animation-delay: 300ms;
 	}
 
-	div:focus-within ul {
-		display: block;
+	@keyframes glow1 {
+		0% {
+			transform: translate(10%, 10%) scale(1);
+		}
+		25% {
+			transform: translate(-10%, 10%) scale(1);
+		}
+		50% {
+			transform: translate(-10%, -10%) scale(1);
+		}
+		75% {
+			transform: translate(10%, -10%) scale(1);
+		}
+		100% {
+			transform: translate(10%, 10%) scale(1);
+		}
 	}
 
-	ul {
-		list-style: none;
-		position: absolute;
-		top: 120%;
-		left: 0;
-		right: 0;
-		background-color: #fff;
-		border-radius: 4px;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-		margin: 0;
-		padding: 0;
-		z-index: 10;
+	@keyframes glow2 {
+		0% {
+			transform: translate(-10%, -10%) scale(1);
+		}
+		25% {
+			transform: translate(10%, -10%) scale(1);
+		}
+		50% {
+			transform: translate(10%, 10%) scale(1);
+		}
+		75% {
+			transform: translate(-10%, 10%) scale(1);
+		}
+		100% {
+			transform: translate(-10%, -10%) scale(1);
+		}
 	}
 
-	li {
-		padding: 16px 24px;
+	@keyframes glow3 {
+		0% {
+			transform: translate(-10%, 10%) scale(1);
+		}
+		25% {
+			transform: translate(-10%, -10%) scale(1);
+		}
+		50% {
+			transform: translate(10%, -10%) scale(1);
+		}
+		75% {
+			transform: translate(10%, 10%) scale(1);
+		}
+		100% {
+			transform: translate(-10%, 10%) scale(1);
+		}
 	}
 
-	li:not(:last-child) {
-		border-bottom: #ccc 1px solid;
-	}
-
-	li:hover {
-		background-color: #efefef;
-		/* font-weight: 600; */
-	}
-
-	a {
-		text-decoration: none;
-		color: #333;
+	@keyframes glow4 {
+		0% {
+			transform: translate(10%, -10%) scale(1);
+		}
+		25% {
+			transform: translate(10%, 10%) scale(1);
+		}
+		50% {
+			transform: translate(-10%, 10%) scale(1);
+		}
+		75% {
+			transform: translate(-10%, -10%) scale(1);
+		}
+		100% {
+			transform: translate(10%, -10%) scale(1);
+		}
 	}
 </style>
