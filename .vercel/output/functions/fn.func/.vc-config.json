@@ -1,6 +1,6 @@
 {
 	"runtime": "nodejs18.x",
-	"handler": "..\\..\\..\\..\\..\\project\\hamza salm\\LandingPage\\flippa-clone\\.svelte-kit\\vercel-tmp\\index.js",
+	"handler": "..\\..\\..\\..\\..\\..\\..\\..\\Users\\صلاح\\Downloads\\Telegram Desktop\\shawerr-app-main\\flippa-clone\\flippa-clone\\.svelte-kit\\vercel-tmp\\index.js",
 	"launcherType": "Nodejs",
 	"experimentalResponseStreaming": true
 }

@@ -1,17 +1,19 @@
-<script>
+<script lang="ts">
 	import { browser } from '$app/environment';
-	import { setLocale, locale } from '$i18n/i18n-svelte';
+	import { page } from '$app/stores';
+	import { setLanguageTag, sourceLanguageTag, type AvailableLanguageTag } from '$paraglide/runtime';
+	import '.././gloobl.css';
+
+	//Use the default language if no language is given
+	let lang: AvailableLanguageTag = sourceLanguageTag;
+	$: lang = ($page.params.lang as AvailableLanguageTag) ?? sourceLanguageTag;
+	$: setLanguageTag(lang);
 	$: if (browser) {
-		console.log('Language', $locale);
+		console.log('Language', lang);
 		// Set the document language and direction
-		document.documentElement.dir = $locale === 'ar' ? 'rtl' : 'ltr';
-		document.documentElement.lang = $locale;
+		document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+		document.documentElement.lang = lang;
 	}
 </script>
 
-<main>
-	<slot />
-</main>
-
-<style>
-</style>
+<slot />

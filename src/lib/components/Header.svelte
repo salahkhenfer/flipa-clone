@@ -1,6 +1,4 @@
 <script>
-	import LocaleSwitcher from './LocaleSwitcher.svelte';
-	import LL from '$i18n/i18n-svelte';
 </script>
 
 <nav
@@ -14,7 +12,6 @@
 		</a>
 		<div class=" flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
 			<!-- Dropdown -->
-			<LocaleSwitcher />
 		</div>
 
 		<div

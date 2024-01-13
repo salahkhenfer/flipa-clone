@@ -14,7 +14,7 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			$db: './src/db',
-			$i18n: 'src/i18n'
+			$paraglide: './src/paraglide'
 		}
 	}
 };

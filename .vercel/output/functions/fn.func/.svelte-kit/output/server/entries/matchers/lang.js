@@ -1,6 +1,5 @@
-import { d as isLocale } from "../../chunks/i18n-util.js";
 const match = (param) => {
-  return isLocale(param);
+  return ["en", "ar"].includes(param);
 };
 export {
   match

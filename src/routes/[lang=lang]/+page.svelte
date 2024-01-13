@@ -1,15 +1,11 @@
 <script lang="ts">
-	import LocaleSwitcher from '$lib/components/LocaleSwitcher.svelte';
 	import './../../../src/gloobl.css';
-	import ListingCard from '$lib/components/ListingCard.svelte';
-	import ListingCardContainer from '$lib/components/ListingCardContainer.svelte';
+	import * as m from '$paraglide/messages';
+	import { availableLanguageTags } from '$paraglide/runtime';
+	import { page } from '$app/stores';
+	import { route } from '$lib/i18n-routing';
 	import SearchInput from '$lib/components/SearchInput.svelte';
-	import type { PageData } from './$types';
 	import Header from '$lib/components/Header.svelte';
-
-	import { replaceLocaleInUrl } from '../../utils';
-
-	import { locales, baseLocale } from '$i18n/i18n-util';
 </script>
 
 <Header />
@@ -19,7 +15,7 @@
 		<h1
 			class="  mx-auto w-fit text-4xl text-white text-center animate-typing overflow-hidden whitespace-nowrap border-r-2 border-r-white text-5xl text-white font-bold"
 		>
-			#1 Marketplace to Buy & Sell {baseLocale}
+			#1 Marketplace to Buy & Sell {m.home()}
 		</h1>
 	</div>
 	<!--  -->
