@@ -10,7 +10,7 @@ return {
 	assets: new Set(["favicon.png","flag.png","Screenshot_2024-01-14_151943-removebg-preview.png"]),
 	mimeTypes: {".png":"image/png"},
 	_: {
-		client: {"start":"_app/immutable/entry/start.fe1ee1f5.js","app":"_app/immutable/entry/app.4910fa33.js","imports":["_app/immutable/entry/start.fe1ee1f5.js","_app/immutable/chunks/scheduler.e108d1fd.js","_app/immutable/chunks/singletons.9c75a827.js","_app/immutable/entry/app.4910fa33.js","_app/immutable/chunks/scheduler.e108d1fd.js","_app/immutable/chunks/index.fde2b77a.js"],"stylesheets":[],"fonts":[]},
+		client: {"start":"_app/immutable/entry/start.dc7c8fce.js","app":"_app/immutable/entry/app.904778e9.js","imports":["_app/immutable/entry/start.dc7c8fce.js","_app/immutable/chunks/scheduler.0d2b0a59.js","_app/immutable/chunks/singletons.62053080.js","_app/immutable/entry/app.904778e9.js","_app/immutable/chunks/scheduler.0d2b0a59.js","_app/immutable/chunks/index.19692e55.js"],"stylesheets":[],"fonts":[]},
 		nodes: [
 			__memo(() => import('../output/server/nodes/0.js')),
 			__memo(() => import('../output/server/nodes/1.js')),
@@ -39,13 +39,6 @@ return {
 				params: [],
 				page: null,
 				endpoint: __memo(() => import('../output/server/entries/endpoints/api/search/_server.ts.js'))
-			},
-			{
-				id: "/api/spectators",
-				pattern: /^\/api\/spectators\/?$/,
-				params: [],
-				page: null,
-				endpoint: __memo(() => import('../output/server/entries/endpoints/api/spectators/_server.ts.js'))
 			},
 			{
 				id: "/[[lang=lang]]/search",

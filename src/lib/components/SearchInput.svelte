@@ -33,7 +33,6 @@
 			<form
 				autocomplete="off"
 				on:submit|preventDefault={handleSearch}
-				role="form"
 				class="relative flex z-50 bg-white rounded-full"
 			>
 				<input
