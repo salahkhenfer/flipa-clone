@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import * as m from '$paraglide/messages';
 
 	let searchTerm = '';
 	let suggestions: string | any[] = [];
@@ -27,7 +28,7 @@
 </script>
 
 <div class="bg-transparent flex flex-col justify-center">
-	<div class=" p-12 w-full sm:max-w-2xl sm:mx-auto">
+	<div class=" p-12 max-md:p-0 max-md:pt-5 w-full sm:max-w-2xl sm:mx-auto">
 		<div class="overflow-hidden z-0 rounded-full relative p-3">
 			<form
 				autocomplete="off"
@@ -38,7 +39,7 @@
 				<input
 					bind:value={searchTerm}
 					on:input={autoCompeleteHandler}
-					placeholder="Search..."
+					placeholder={m.Search()}
 					type="text"
 					class="rounded-full flex-1 px-6 py-4 text-gray-700 focus:outline-none"
 				/>

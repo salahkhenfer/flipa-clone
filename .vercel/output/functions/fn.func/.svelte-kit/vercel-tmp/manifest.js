@@ -7,10 +7,10 @@ function __memo(fn) {
 return {
 	appDir: "_app",
 	appPath: "_app",
-	assets: new Set(["favicon.png","flag.png"]),
+	assets: new Set(["favicon.png","flag.png","Screenshot_2024-01-14_151943-removebg-preview.png"]),
 	mimeTypes: {".png":"image/png"},
 	_: {
-		client: {"start":"_app/immutable/entry/start.c2039d67.js","app":"_app/immutable/entry/app.ce472468.js","imports":["_app/immutable/entry/start.c2039d67.js","_app/immutable/chunks/scheduler.b0c1c2c3.js","_app/immutable/chunks/singletons.eb1b669d.js","_app/immutable/entry/app.ce472468.js","_app/immutable/chunks/scheduler.b0c1c2c3.js","_app/immutable/chunks/index.0b2cfd28.js"],"stylesheets":[],"fonts":[]},
+		client: {"start":"_app/immutable/entry/start.fe1ee1f5.js","app":"_app/immutable/entry/app.4910fa33.js","imports":["_app/immutable/entry/start.fe1ee1f5.js","_app/immutable/chunks/scheduler.e108d1fd.js","_app/immutable/chunks/singletons.9c75a827.js","_app/immutable/entry/app.4910fa33.js","_app/immutable/chunks/scheduler.e108d1fd.js","_app/immutable/chunks/index.fde2b77a.js"],"stylesheets":[],"fonts":[]},
 		nodes: [
 			__memo(() => import('../output/server/nodes/0.js')),
 			__memo(() => import('../output/server/nodes/1.js')),
@@ -48,23 +48,23 @@ return {
 				endpoint: __memo(() => import('../output/server/entries/endpoints/api/spectators/_server.ts.js'))
 			},
 			{
-				id: "/[lang=lang]",
-				pattern: /^\/([^/]+?)\/?$/,
-				params: [{"name":"lang","matcher":"lang","optional":false,"rest":false,"chained":false}],
-				page: { layouts: [0,], errors: [1,], leaf: 2 },
-				endpoint: null
-			},
-			{
-				id: "/[lang=lang]/search",
-				pattern: /^\/([^/]+?)\/search\/?$/,
-				params: [{"name":"lang","matcher":"lang","optional":false,"rest":false,"chained":false}],
+				id: "/[[lang=lang]]/search",
+				pattern: /^(?:\/([^/]+))?\/search\/?$/,
+				params: [{"name":"lang","matcher":"lang","optional":true,"rest":false,"chained":true}],
 				page: { layouts: [0,], errors: [1,], leaf: 3 },
 				endpoint: null
 			},
 			{
-				id: "/[lang=lang]/[id]",
-				pattern: /^\/([^/]+?)\/([^/]+?)\/?$/,
-				params: [{"name":"lang","matcher":"lang","optional":false,"rest":false,"chained":false},{"name":"id","optional":false,"rest":false,"chained":false}],
+				id: "/[[lang=lang]]",
+				pattern: /^(?:\/([^/]+))?\/?$/,
+				params: [{"name":"lang","matcher":"lang","optional":true,"rest":false,"chained":true}],
+				page: { layouts: [0,], errors: [1,], leaf: 2 },
+				endpoint: null
+			},
+			{
+				id: "/[[lang=lang]]/[id]",
+				pattern: /^(?:\/([^/]+))?\/([^/]+?)\/?$/,
+				params: [{"name":"lang","matcher":"lang","optional":true,"rest":false,"chained":true},{"name":"id","optional":false,"rest":false,"chained":false}],
 				page: { layouts: [0,], errors: [1,], leaf: 4 },
 				endpoint: null
 			}

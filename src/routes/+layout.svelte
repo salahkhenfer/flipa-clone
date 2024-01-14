@@ -16,4 +16,6 @@
 	}
 </script>
 
-<slot />
+{#key lang}
+	<slot />
+{/key}

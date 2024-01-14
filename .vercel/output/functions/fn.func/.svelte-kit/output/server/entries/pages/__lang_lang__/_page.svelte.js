@@ -1,13 +1,41 @@
-import { c as create_ssr_component, d as add_attribute, f as each, e as escape, v as validate_component } from "../../../chunks/ssr.js";
-/* empty css                      */import { l as languageTag } from "../../../chunks/runtime.js";
+import { c as create_ssr_component, d as add_attribute, f as each, e as escape, b as subscribe, v as validate_component } from "../../../chunks/ssr.js";
+/* empty css                      */import { l as languageTag, b as availableLanguageTags } from "../../../chunks/runtime.js";
+import { p as page } from "../../../chunks/stores.js";
 const home$2 = /* @__NO_SIDE_EFFECTS__ */ () => `اهلا`;
+const DetFreeValidation$2 = /* @__NO_SIDE_EFFECTS__ */ () => `احصل على التحقق المجاني`;
+const language$2 = /* @__NO_SIDE_EFFECTS__ */ () => `العربية `;
 const home$1 = /* @__NO_SIDE_EFFECTS__ */ () => `home`;
+const DetFreeValidation$1 = /* @__NO_SIDE_EFFECTS__ */ () => `Get Free Validation`;
+const language$1 = /* @__NO_SIDE_EFFECTS__ */ () => `English  `;
 const home = /* @__NO_SIDE_EFFECTS__ */ (params = {}, options = {}) => {
   return {
     ar: home$2,
     en: home$1
   }[options.languageTag ?? languageTag()]();
 };
+const DetFreeValidation = /* @__NO_SIDE_EFFECTS__ */ (params = {}, options = {}) => {
+  return {
+    ar: DetFreeValidation$2,
+    en: DetFreeValidation$1
+  }[options.languageTag ?? languageTag()]();
+};
+const language = /* @__NO_SIDE_EFFECTS__ */ (params = {}, options = {}) => {
+  return {
+    ar: language$2,
+    en: language$1
+  }[options.languageTag ?? languageTag()]();
+};
+function route(path, lang) {
+  path = withoutLanguageTag(path);
+  return `/${lang}${path}`;
+}
+function withoutLanguageTag(path) {
+  const [_, maybeLang, ...rest] = path.split("/");
+  if (availableLanguageTags.includes(maybeLang)) {
+    return "/" + rest.join("/");
+  }
+  return path;
+}
 const SearchInput_svelte_svelte_type_style_lang = "";
 const css = {
   code: ".glow.svelte-runwoo{top:-10%;left:-10%;width:120%;height:120%;border-radius:100%}.glow-1.svelte-runwoo{animation:svelte-runwoo-glow1 4s linear infinite}.glow-2.svelte-runwoo{animation:svelte-runwoo-glow2 4s linear infinite;animation-delay:100ms}.glow-3.svelte-runwoo{animation:svelte-runwoo-glow3 4s linear infinite;animation-delay:200ms}.glow-4.svelte-runwoo{animation:svelte-runwoo-glow4 4s linear infinite;animation-delay:300ms}@keyframes svelte-runwoo-glow1{0%{transform:translate(10%, 10%) scale(1)}25%{transform:translate(-10%, 10%) scale(1)}50%{transform:translate(-10%, -10%) scale(1)}75%{transform:translate(10%, -10%) scale(1)}100%{transform:translate(10%, 10%) scale(1)}}@keyframes svelte-runwoo-glow2{0%{transform:translate(-10%, -10%) scale(1)}25%{transform:translate(10%, -10%) scale(1)}50%{transform:translate(10%, 10%) scale(1)}75%{transform:translate(-10%, 10%) scale(1)}100%{transform:translate(-10%, -10%) scale(1)}}@keyframes svelte-runwoo-glow3{0%{transform:translate(-10%, 10%) scale(1)}25%{transform:translate(-10%, -10%) scale(1)}50%{transform:translate(10%, -10%) scale(1)}75%{transform:translate(10%, 10%) scale(1)}100%{transform:translate(-10%, 10%) scale(1)}}@keyframes svelte-runwoo-glow4{0%{transform:translate(10%, -10%) scale(1)}25%{transform:translate(10%, 10%) scale(1)}50%{transform:translate(-10%, 10%) scale(1)}75%{transform:translate(-10%, -10%) scale(1)}100%{transform:translate(10%, -10%) scale(1)}}",
@@ -22,7 +50,14 @@ const SearchInput = create_ssr_component(($$result, $$props, $$bindings, slots) 
   })}</ul></div>` : ``}</div> </div>`;
 });
 const Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<nav class="shadow-lg shadow-cyan-500/10 w-full bg-gradient-to-r from-teal-500 to-indigo-800 border-gray-200 sticky" data-svelte-h="svelte-1w9v85j"><div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"><a href="/" class="flex items-center space-x-3 rtl:space-x-reverse"><span class="self-center text-3xl font-semibold whitespace-nowrap dark:text-white">Flippa.</span></a> <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse"></div> <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-language"><ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-transparent bg-transprant md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"><li><a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">home</a></li> <li><a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a></li> <li><a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a></li> <li><a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pricing</a></li> <li><a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a></li></ul></div></div></nav>`;
+  let $page, $$unsubscribe_page;
+  $$unsubscribe_page = subscribe(page, (value) => $page = value);
+  let { toggleNav = false } = $$props;
+  if ($$props.toggleNav === void 0 && $$bindings.toggleNav && toggleNav !== void 0)
+    $$bindings.toggleNav(toggleNav);
+  $$unsubscribe_page();
+  return `<nav class="shadow-lg shadow-cyan-500/10 w-full bg-gradient-to-r from-teal-500 to-indigo-800 border-gray-200 sticky"><div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"><a href="/" class="flex items-center space-x-3 rtl:space-x-reverse" data-svelte-h="svelte-1yg19r8"><img class="w-20 h-19" src="/static/Screenshot_2024-01-14_151943-removebg-preview.png" alt=""></a> <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse"> <div class="flex gap-3"><div class="text-white border-spacing-0 hover:text-black cursor-pointer text-xl transition-all duration-300 border-solid hover:bg-white border-2 border-white px-5 py-1 rounded-3xl">${escape(/* @__PURE__ */ DetFreeValidation())}
+					Det Free Validation</div> <div class="text-white border-spacing-0 bg-teal-500 cursor-pointer text-xl transition-all duration-300 border-solid hover:bg-indigo-800 border-2 border-white px-5 py-1 rounded-3xl" data-svelte-h="svelte-lj3egs">Sell Free</div></div> ${languageTag() === "ar" ? `<li class="font-thin underline underline-offset-4"><a${add_attribute("href", route($page.url.pathname, "en"), 0)} hreflang="en">${escape(/* @__PURE__ */ language())}</a></li>` : `<li class="font-thin underline underline-offset-4"><a${add_attribute("href", route($page.url.pathname, "ar"), 0)} hreflang="ar">${escape(/* @__PURE__ */ language())}</a></li>`}</div> <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-language"></div></div></nav>`;
 });
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${validate_component(Header, "Header").$$render($$result, {}, {}, {})} <div class="w-full h-screen bg-gradient-to-r from-teal-500 to-indigo-800"><div class="pt-20"><h1 class="mx-auto w-fit text-4xl text-white text-center animate-typing overflow-hidden whitespace-nowrap border-r-2 border-r-white text-5xl text-white font-bold">#1 Marketplace to Buy &amp; Sell ${escape(/* @__PURE__ */ home())}</h1></div>   ${validate_component(SearchInput, "SearchInput").$$render($$result, {}, {}, {})} </div>`;

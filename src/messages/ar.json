@@ -1,5 +1,11 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 
-	"home": "اهلا"
+	"home": "اهلا",
+	"DetFreeValidation": "احصل على التحقق المجاني",
+	"SellFree": "بيع مجاني",
+	"language": "العربية ",
+	"Yamdik": "يمديك ",
+	"titleHome": "السوق رقم 1 للشراء والبيع",
+	"Search": " ...ابحث "
 }

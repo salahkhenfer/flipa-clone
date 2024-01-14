@@ -1,5 +1,12 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 
-	"home": "home"
+	"home": "home",
+	"SellFree": "Sell Free",
+
+	"DetFreeValidation": "Get Free Validation",
+	"language": "English  ",
+	"Yamdik": "Yamdik",
+	"titleHome": "#1 Marketplace to Buy & Sell",
+	"Search": " Search... "
 }
