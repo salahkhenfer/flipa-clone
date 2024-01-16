@@ -10,7 +10,7 @@ return {
 	assets: new Set(["favicon.png","flag.png","Screenshot_2024-01-14_151943-removebg-preview.png"]),
 	mimeTypes: {".png":"image/png"},
 	_: {
-		client: {"start":"_app/immutable/entry/start.b069c221.js","app":"_app/immutable/entry/app.f753ce90.js","imports":["_app/immutable/entry/start.b069c221.js","_app/immutable/chunks/scheduler.0d2b0a59.js","_app/immutable/chunks/singletons.59dea678.js","_app/immutable/entry/app.f753ce90.js","_app/immutable/chunks/scheduler.0d2b0a59.js","_app/immutable/chunks/index.19692e55.js"],"stylesheets":[],"fonts":[]},
+		client: {"start":"_app/immutable/entry/start.a407e95b.js","app":"_app/immutable/entry/app.c5bcda76.js","imports":["_app/immutable/entry/start.a407e95b.js","_app/immutable/chunks/scheduler.0d2b0a59.js","_app/immutable/chunks/singletons.75859fe2.js","_app/immutable/entry/app.c5bcda76.js","_app/immutable/chunks/scheduler.0d2b0a59.js","_app/immutable/chunks/index.19692e55.js"],"stylesheets":[],"fonts":[]},
 		nodes: [
 			__memo(() => import('../output/server/nodes/0.js')),
 			__memo(() => import('../output/server/nodes/1.js')),
